@@ -82,9 +82,17 @@ def largest_stay(stays: list) -> str:
 
 
 def format_stay_line(
-    guest: str, total: float, credit_check: bool, welcome_package: bool
+    guest: str,
+    total: float,
+    credit_check: bool,
+    welcome_package: bool,
 ) -> str:
-    """formats the stay information into a string for display."""
-    credit_check_str = "Yes" if credit_check else "No"
-    welcome_package_str = "Yes" if welcome_package else "No"
-    return f"{guest}: ${total:.2f} | Credit Check Required: {credit_check_str} | Welcome Package: {welcome_package_str}"
+    """Format the stay information into a string for display."""
+
+    credit_check_str = "yes" if credit_check else "no"
+    welcome_package_str = "yes" if welcome_package else "no"
+
+    return (
+        f"{guest}: ${total:.2f} | credit check: {credit_check_str}"
+        f" | welcome package: {welcome_package_str}"
+    )
